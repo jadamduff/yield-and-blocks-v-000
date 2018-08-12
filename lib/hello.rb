@@ -1,9 +1,13 @@
 def hello_t(names)
-  if names.length > 0
-    names.each {|name| puts name.upcase}
-  else
-    puts "Hey! No block was given!"
+  i = 0
+  while i < array.length
+    yield array[i]
+    i = i + 1
   end
 end
 
-# call your method here!
+hello_t(["Tim", "Tom", "Jim"]) do |name|
+  if name.start_with?("T")
+    puts "Hi, #{name}"
+  end
+end
